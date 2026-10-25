@@ -1,0 +1,13 @@
+# Intel compatibility constraints, not a hardware-tested full lock.
+# Torch 2.2.2 supplies Intel macOS wheels; Python 3.11 and NumPy 1.x are intentional.
+torch==2.2.2
+torchaudio==2.2.2
+numpy==1.26.4
+scipy==1.13.1
+demucs==4.0.1
+librosa==0.11.0
+soundfile==0.13.1
+soxr==0.5.0.post1
+streamlit==1.50.0
+pandas==2.2.3
+matplotlib==3.10.7

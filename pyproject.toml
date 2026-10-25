@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "worship-beat-toolkit"
+version = "0.1.0"
+description = "Local, review-first drum loop extraction and Remixlive packaging"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["numpy>=1.26,<3", "scipy>=1.12,<2", "soundfile>=0.12,<1", "soxr>=0.3,<2", "librosa>=0.10,<2", "yt-dlp>=2025.1"]
+
+[project.optional-dependencies]
+separation = ["demucs>=4.0.1,<5", "torch>=2.2,<3", "torchaudio>=2.2,<3"]
+app = ["streamlit>=1.40,<2", "pandas>=2,<4", "matplotlib>=3.8,<4"]
+dev = ["pytest>=8,<10", "build>=1,<2", "ruff>=0.14,<1"]
+
+[project.scripts]
+worship-beats = "worship_beats.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore:.*pkg_resources.*:DeprecationWarning"]
